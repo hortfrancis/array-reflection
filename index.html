@@ -10,12 +10,24 @@
 <body>
     <h1>Array Reflection</h1>
 
-    <div class="image-displayer">
-        <div class="image-displayer__image-container"></div>
-        <button type="button" class="image-displayer__another-image-button">Another image</button>
+    <div class="fetched-image-displayer">
+        <div class="fetched-image-displayer__image-container"></div>
+        <button type="button" class="fetched-image-displayer__another-image-button">Another image</button>
     </div>
 
+    <div class="email-address-adder">
+        <form id="form-add-email">
+            <label for="input-add-email">Add an email address</label>
+            <input type="email" id="input-add-email" required pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+                title="Email format: username@domain.com. Please ensure this is a valid email address." placeholder="Enter email address"
+                class="email-address-adder__email-input">
+            <button type="submit" class="email-address-adder__add-email-button">Add email</button>
+        </form>
+    </div>
+
+    <!-- JavaScript script imports -->
     <script src="js/imageFetcher.js"></script>
+    <script src="js/emailAddressAdder.js"></script>
 </body>
 
 </html>
