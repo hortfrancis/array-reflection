@@ -25,9 +25,22 @@
         </form>
     </div>
 
+    <div class="current-email-address-displayer">
+        <span class="current-email-address-displayer__displayed-email-address">Please select an email address</span>
+
+        <div class="current-email-address-displayer__email-addresses-picker">
+            <label for="select-email-addresses">Select an email address</label>
+            <select id="select-email-addresses">
+            </select>
+        </div>
+
+        <button type="button" disabled class="current-email-address-displayer__add-current-image-button">Add current image</button>
+    </div>
+
     <!-- JavaScript script imports -->
     <script src="js/imageFetcher.js"></script>
     <script src="js/emailAddressAdder.js"></script>
+    <script src="js/currentEmailAddressDisplayer.js"></script>
 </body>
 
 </html>
