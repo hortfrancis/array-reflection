@@ -16,8 +16,9 @@ class EmailAddress {
     constructor(emailAddress) {
         // Store the email address as a string
         this.emailAddress = emailAddress;
-        // Store assigned images in an array
+        // List of image URLs
         this.images = [];
+        // Unique identifier to bind application data to the user interface 
         this.uuid = makeUUID();
     }
 
