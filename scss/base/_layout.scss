@@ -1,0 +1,12 @@
+// * Emplying a 'mobile-first' approach to layout & media queries * 
+
+// Initial styles, expecting a minimum supported viewport width of 300px  
+body {
+    margin: 0;
+}
+
+h1 {
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 2rem;
+}

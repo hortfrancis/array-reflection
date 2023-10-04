@@ -1,0 +1,62 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+body,
+input,
+input::placeholder,
+select,
+button {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  color: #000000;
+}
+
+button {
+  display: block;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0.5ch;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 2rem;
+}
+
+button:disabled {
+  color: #d3d3d3;
+  cursor: not-allowed;
+}
+
+input, select {
+  padding: 0.75rem 1rem;
+  margin: 1rem 0.5rem;
+}
+
+/*# sourceMappingURL=application.css.map */
