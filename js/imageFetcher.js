@@ -6,6 +6,8 @@ let currentImageURL = '';
 const accessKey = 'zHaO4h1oOz3bR_zLHY2XX0TAKF7Jy4Ny0gimZmSPrx0';
 const randomImageEndpoint = 'https://api.unsplash.com/photos/random';
 
+
+
 function fetchImage() {
     // Using Unsplash API
     // https://unsplash.com/documentation#get-a-random-photo
@@ -29,5 +31,14 @@ function fetchImage() {
 // Fetch another image each time the button is pressed
 document.querySelector('.fetched-image-displayer__another-image-button').addEventListener('click', fetchImage);
 
-// Display the first image on page load
-fetchImage();
+
+// Use a local default image while building, to avoid hitting the API limit
+let testing = true;
+
+if (testing) {
+    fetchedImageContainer.innerHTML = `<img src="testing/test-image01.jpeg" alt="test image">`;
+    currentImageURL = 'testing/test-image01.jpeg';
+} else {
+    // Display the first image on page load
+    fetchImage();
+}
