@@ -1,0 +1,20 @@
+.fetched-image-displayer__image-container {
+
+    width: 100vw;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+        width: 100%;
+    }
+}
+
+.fetched-image-displayer__another-image-button {
+
+    margin-top: 1.5rem;
+
+    // Center the button
+    margin-left: auto;
+    margin-right: auto;
+}

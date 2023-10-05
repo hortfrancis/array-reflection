@@ -1,5 +1,5 @@
 const displayedEmailAddress = document.querySelector('.current-email-address-displayer__displayed-email-address');
-const emailAddressPicker = document.querySelector('.current-email-address-displayer__email-addresses-picker select');
+const emailAddressPicker = document.querySelector('.current-email-address-displayer__email-address-picker select');
 const addCurrentImageButton = document.querySelector('.current-email-address-displayer__add-current-image-button');
 const assignedImagesDisplayer = document.querySelector('.current-email-address-displayer__assigned-images-displayer');
 
@@ -64,7 +64,7 @@ function updateEmailAddressPicker() {
     // Add a default value
     const defaultOption = document.createElement('option');
     defaultOption.value = '';
-    defaultOption.textContent = 'Please select an email address';
+    defaultOption.textContent = 'Pick an email address';
     emailAddressPicker.appendChild(defaultOption);
 
     // Create an `<option>` element for each email address

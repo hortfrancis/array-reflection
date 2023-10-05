@@ -1,3 +1,54 @@
+.current-email-address-displayer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.current-email-address-displayer h3 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.current-email-address-displayer h3::after {
+  content: ":";
+}
 
+.current-email-address-displayer__displayed-email-address {
+  text-align: center;
+}
+
+.current-email-address-displayer__email-address-picker {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.current-email-address-displayer__email-address-picker label {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+}
+.current-email-address-displayer__email-address-picker label::after {
+  content: ":";
+}
+.current-email-address-displayer__email-address-picker select {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.current-email-address-displayer__add-current-image-button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.current-email-address-displayer__assigned-images-displayer li {
+  display: block;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+.current-email-address-displayer__assigned-images-displayer img {
+  width: 100%;
+}
 
 /*# sourceMappingURL=index.css.map */

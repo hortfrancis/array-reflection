@@ -1,0 +1,71 @@
+.current-email-address-displayer {
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    h3 {
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+
+        &::after {
+            content: ":";
+        }
+    }
+}
+
+.current-email-address-displayer__displayed-email-address {
+
+    text-align: center;
+}
+
+.current-email-address-displayer__email-address-picker {
+
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+
+    label {
+
+        display: block;
+        text-align: center;
+        font-weight: 600;
+
+        &::after {
+            content: ":";
+        }
+    }
+
+    select {
+
+        display: block;
+
+        width: 100%;
+        max-width: 400px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.current-email-address-displayer__add-current-image-button {
+
+    // Center the button 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.current-email-address-displayer__assigned-images-displayer {
+    
+    li {
+        // Use the <li> as the image container 
+        display: block;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+    }
+
+    img {
+        width: 100%;
+    }
+}

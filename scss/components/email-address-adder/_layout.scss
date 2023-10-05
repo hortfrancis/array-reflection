@@ -1,0 +1,34 @@
+.email-address-adder {
+    
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    form {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    label {
+        display: block;
+        text-align: center;
+        font-weight: 600;
+
+        &::after {
+            content: ":";
+        }
+    }
+}
+
+.email-address-adder__email-input {
+
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.email-address-adder__add-email-button {
+    margin-left: auto;
+    margin-right: auto;
+}

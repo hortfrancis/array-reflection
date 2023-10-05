@@ -29,6 +29,10 @@ button {
   color: #000000;
 }
 
+label {
+  font-size: 1.25rem;
+}
+
 button {
   display: block;
   padding: 0.75rem 1rem;
@@ -57,6 +61,105 @@ button:disabled {
 input, select {
   padding: 0.75rem 1rem;
   margin: 1rem 0.5rem;
+}
+
+.fetched-image-displayer__image-container {
+  width: 100vw;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.fetched-image-displayer__image-container img {
+  width: 100%;
+}
+
+.fetched-image-displayer__another-image-button {
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.current-email-address-displayer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.current-email-address-displayer h3 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.current-email-address-displayer h3::after {
+  content: ":";
+}
+
+.current-email-address-displayer__displayed-email-address {
+  text-align: center;
+}
+
+.current-email-address-displayer__email-address-picker {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.current-email-address-displayer__email-address-picker label {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+}
+.current-email-address-displayer__email-address-picker label::after {
+  content: ":";
+}
+.current-email-address-displayer__email-address-picker select {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.current-email-address-displayer__add-current-image-button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.current-email-address-displayer__assigned-images-displayer li {
+  display: block;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+.current-email-address-displayer__assigned-images-displayer img {
+  width: 100%;
+}
+
+.email-address-adder {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.email-address-adder form {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.email-address-adder label {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+}
+.email-address-adder label::after {
+  content: ":";
+}
+
+.email-address-adder__email-input {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.email-address-adder__add-email-button {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*# sourceMappingURL=application.css.map */
