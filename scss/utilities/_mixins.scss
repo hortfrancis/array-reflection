@@ -1,0 +1,18 @@
+// To handle media queries
+@mixin at-breakpoint($breakpoint) {
+    // Check if the breakpoint exists in the $breakpoints map
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Fetch the value of the breakpoint from the map
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+        
+        // Write the media query
+        @media (min-width: $breakpoint-value) {
+            @content;
+        }
+    }
+    
+    // If the breakpoint doesn't exist, throw a warning
+    @else {
+        @warn "No breakpoint found for '#{$breakpoint}'.";
+    }
+}

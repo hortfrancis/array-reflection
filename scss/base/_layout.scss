@@ -10,3 +10,45 @@ h1 {
     text-align: center;
     font-size: 2rem;
 }
+
+// Breakpoint: 800px and above 
+@include at-breakpoint('medium-to-wide') {
+
+    .layout__email-address-components-container {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .email-address-adder,
+    .current-email-address-displayer {
+        // The components take up equal space next to each other, horizontally 
+        width: 50%;
+    }
+}
+
+@include at-breakpoint('wide-to-extra-wide') {
+
+    .layout__overall-site-components-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 4rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .layout__email-address-components-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .email-address-adder,
+    .current-email-address-displayer {
+        // Components can now retain a fixed width at this extra-wide viewport width
+        width: 400px;
+    }
+}

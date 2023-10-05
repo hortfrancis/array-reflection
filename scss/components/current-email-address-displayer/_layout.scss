@@ -3,6 +3,10 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
 
+    h2 {
+        margin-top: 0;
+    }
+
     h3 {
         margin-top: 2rem;
         margin-bottom: 1.5rem;
@@ -38,10 +42,8 @@
     select {
 
         display: block;
-
         width: 100%;
         max-width: 400px;
-
         margin-left: auto;
         margin-right: auto;
     }
