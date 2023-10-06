@@ -1,2 +1,1 @@
-# Default image files, to avoid blowing through the API rate limit while building & testing
-testing/
+# .gitignore is blank for now

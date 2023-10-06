@@ -33,12 +33,12 @@ document.querySelector('.fetched-image-displayer__another-image-button').addEven
 
 
 // Use a local default image while building, to avoid hitting the API limit
-let testing = true;
-
-if (testing) {
+// Check for a local testing variable in the browser's localStorage cache
+if (localStorage.getItem('testing') === 'true') {
+    // Use the local default image
     fetchedImageContainer.innerHTML = `<img src="testing/test-image01.jpeg" alt="test image">`;
     currentImageURL = 'testing/test-image01.jpeg';
 } else {
-    // Display the first image on page load
+    // Fetch the image from the API as normal
     fetchImage();
 }
