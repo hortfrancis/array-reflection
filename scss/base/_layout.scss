@@ -1,6 +1,7 @@
 // * Emplying a 'mobile-first' approach to layout & media queries * 
 
 // Initial styles, expecting a minimum supported viewport width of 300px  
+
 body {
     margin: 0;
 }
@@ -11,13 +12,25 @@ h1 {
     font-size: 2rem;
 }
 
-// Breakpoint: 800px and above 
+input,
+select {
+    padding: 0.75rem 1rem;
+    margin: 1rem 0.5rem;
+}
+
+button {
+    display: block;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+}
+
+// Breakpoint: 900px and above 
 @include at-breakpoint('medium-to-wide') {
 
     .layout__email-address-components-container {
 
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: flex-start;
         gap: 2rem;
     }
@@ -33,14 +46,16 @@ h1 {
 
     .layout__overall-site-components-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: flex-start;
-        gap: 4rem;
+        gap: 2rem;
+
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 2rem;
     }
-    
+
     .layout__email-address-components-container {
         flex-direction: column;
         align-items: center;
@@ -50,5 +65,6 @@ h1 {
     .current-email-address-displayer {
         // Components can now retain a fixed width at this extra-wide viewport width
         width: 400px;
+        margin: 0;
     }
 }

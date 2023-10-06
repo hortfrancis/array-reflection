@@ -1,57 +1,18 @@
-.current-email-address-displayer {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.current-email-address-displayer h2 {
-  margin-top: 0;
-}
-.current-email-address-displayer h3 {
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-.current-email-address-displayer h3::after {
-  content: ":";
-}
+/* Error: Undefined mixin.
+ *   ,
+ * 3 |     @include neomorphic-shadow-outwards;
+ *   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   scss/components/current-email-address-displayer/_appearance.scss 3:5  @import
+ *   scss/components/current-email-address-displayer/index.scss 2:9        root stylesheet */
 
-.current-email-address-displayer__displayed-email-address {
-  text-align: center;
-}
-
-.current-email-address-displayer__email-address-picker {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-.current-email-address-displayer__email-address-picker label {
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
   display: block;
-  text-align: center;
-  font-weight: 600;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a   \2577 \a 3 \2502      @include neomorphic-shadow-outwards;\a   \2502      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss/components/current-email-address-displayer/_appearance.scss 3:5  @import\a   scss/components/current-email-address-displayer/index.scss 2:9        root stylesheet";
 }
-.current-email-address-displayer__email-address-picker label::after {
-  content: ":";
-}
-.current-email-address-displayer__email-address-picker select {
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.current-email-address-displayer__add-current-image-button {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.current-email-address-displayer__assigned-images-displayer li {
-  display: block;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1rem;
-}
-.current-email-address-displayer__assigned-images-displayer img {
-  width: 100%;
-}
-
-/*# sourceMappingURL=index.css.map */

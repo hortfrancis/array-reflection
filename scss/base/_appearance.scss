@@ -1,15 +1,49 @@
+body {
+    background-color: $base-grey;
+}
+
+input {
+    @include neomorphic-shadow-inwards;
+    @include interactable-border; // Includes border colour darken on :hover
+
+    background-color: $base-white;
+    color: $base-black-lighter;
+    caret-color: $base-black-lighter;
+    transition: all 0.1s ease;
+
+    &::placeholder {
+        color: $base-grey-darker;
+    }
+}
+
+select {
+    @include neomorphic-shadow-inwards;
+    @include interactable-border;
+}
+
 button {
-    @extend %button-like;
+    @include neomorphic-shadow-outwards;
+    @include interactable-border;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    // Preclude 'disabled' buttons
+    &:not(:disabled):active {
+
+        background-color: $action-yellow-translucent;
+        color: $action-yellow;
+        // Button appears 'pressed' down when pressed
+        box-shadow: none;
+    }
+
+    &:disabled {
+        color: $base-grey-darker;
+        cursor: not-allowed;
+
+        &:hover {
+            border-color: $base-grey-darker;
+        }
+    }
 }
-
-button:disabled {
-    color: $inactive-grey;
-    cursor: not-allowed;
-}
-
-input, select {
-
-    padding: 0.75rem 1rem;
-    margin: 1rem 0.5rem;
-}
-

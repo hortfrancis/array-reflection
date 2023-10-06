@@ -1,0 +1,13 @@
+.fetched-image-displayer {
+
+    @include neomorphic-shadow-outwards;
+    @include static-border($component-type: 'fetched-image-displayer');
+}
+
+.fetched-image-displayer__image-container {
+
+    img {
+        @include neomorphic-shadow-inwards;
+        @include static-border($border-colour: $base-grey-darker);
+    }
+}

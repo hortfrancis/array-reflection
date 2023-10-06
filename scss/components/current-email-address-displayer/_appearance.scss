@@ -1,0 +1,13 @@
+.current-email-address-displayer {
+
+    @include neomorphic-shadow-outwards;
+    @include static-border;
+}
+
+.current-email-address-displayer__assigned-images-displayer {
+
+    img {
+        @include neomorphic-shadow-inwards;
+        border-radius: 0.5rem;
+    }
+}

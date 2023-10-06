@@ -1,7 +1,6 @@
 .current-email-address-displayer {
 
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    @extend %ui-component-base-layout;
 
     h2 {
         margin-top: 0;
@@ -24,9 +23,6 @@
 }
 
 .current-email-address-displayer__email-address-picker {
-
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
 
     label {
 
@@ -52,19 +48,23 @@
 .current-email-address-displayer__add-current-image-button {
 
     // Center the button 
-    margin-left: auto;
-    margin-right: auto;
+    margin: 2rem auto 0;
 }
 
 .current-email-address-displayer__assigned-images-displayer {
-    
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
     li {
         // Use the <li> as the image container 
         display: block;
         max-width: 400px;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 1rem;
     }
 
     img {

@@ -1,0 +1,10 @@
+.email-address-adder {
+
+    @include neomorphic-shadow-outwards;
+    @include static-border;
+
+    label {
+        font-weight: 600;
+    }
+}
+

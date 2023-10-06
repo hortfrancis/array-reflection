@@ -1,15 +1,26 @@
 // Colour scheme 
 $base-black: #000000;
 $base-white: #ffffff;
+$base-grey: #dfe4e6;
 
-$inactive-grey: #d3d3d3;
+$inactive-grey: $base-grey;
+$action-yellow: #ffb600;
 
 // For consistency when using `darken()` and `lighten()` functions
 $shade-modifier: 20%;
+$translucent-modifier: 0.05;
+
+$base-white-darker: darken($base-white, $shade-modifier);
+$base-grey-darker: darken($base-grey, $shade-modifier);
+$base-grey-lighter: lighten($base-grey, $shade-modifier);
+$base-black-lighter: lighten($base-black, $shade-modifier);
+
+$action-yellow-translucent: rgba($action-yellow, $translucent-modifier);
 
 
 // Viewport width breakpoints
 $breakpoints: (
-    medium-to-wide: 800px,
+    narrow-to-medium: 400px,
+    medium-to-wide: 900px,
     wide-to-extra-wide: 1200px
 );

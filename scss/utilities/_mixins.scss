@@ -1,18 +1,90 @@
 // To handle media queries
-@mixin at-breakpoint($breakpoint) {
-    // Check if the breakpoint exists in the $breakpoints map
+@mixin at-breakpoint($breakpoint, $plus: 0) {
+
+    // Check if the breakpoint exists in the breakpoints map
     @if map-has-key($breakpoints, $breakpoint) {
-        // Fetch the value of the breakpoint from the map
+
         $breakpoint-value: map-get($breakpoints, $breakpoint);
-        
-        // Write the media query
-        @media (min-width: $breakpoint-value) {
+
+        // Opportunity to offset the breakpoint value with an extra value
+        // (supports minus values as well)
+        @media (min-width: ($breakpoint-value + $plus)) {
             @content;
         }
     }
-    
-    // If the breakpoint doesn't exist, throw a warning
+
+    // Error handling for developers while debugging 
     @else {
         @warn "No breakpoint found for '#{$breakpoint}'.";
+    }
+}
+
+// Key 'neomorphic' styling for the UI components
+
+@mixin neomorphic-shadow-outwards($offset: 0.5em, $blur: 1em, $spread: 0) {
+
+    box-shadow: 0 (-$offset) $blur $spread white,
+        0 $offset $blur $spread $base-grey-darker;
+}
+
+@mixin neomorphic-shadow-inwards($offset: 8px, $blur: 15px, $spread: 0) {
+
+    box-shadow: 0 (-$offset) $blur $spread $base-grey-darker,
+        0 $offset $blur $spread $base-white;
+}
+
+// Used to signifiy a self-contained UI component
+@mixin static-border($component-type: '', $border-width: 0.15em, $border-radius: 0.5em, $border-colour: rgba($base-grey-darker, 0.25)) {
+
+    $border-style: $border-width solid $border-colour;
+
+    // When the viewport is narrow, the component extends to the viewport boundary,
+    // so a border is only needed on the top and bottom    
+    border-top: $border-style;
+    border-bottom: $border-style;
+
+    @if ($component-type =='fetched-image-displayer') {
+
+        // .fetched-image-displayer needs to be slightly wider than the other components, 
+        // so the full border styling should kick in at a slightly wider viewport
+        // Viewport width: 470px
+        @include at-breakpoint(narrow-to-medium, $plus: 70px) {
+
+            // Add the border to the left and right
+            border: $border-style;
+            // And round the corners somewhat
+            border-radius: $border-radius;
+        }
+    }
+
+    @else {
+
+        // Styling for the other components (email-address-adder & current-email-address-displayer)
+        @include at-breakpoint(narrow-to-medium) {
+
+            border: $border-style;
+            border-radius: $border-radius;
+        }
+    }
+}
+
+// Used to signify a UI element that can be interacted with 
+@mixin interactable-border($border-width: 0.15em, $border-radius: 0.5em) {
+
+    border: $base-grey-darker $border-width solid;
+    border-radius: $border-radius;
+
+    // Removing user-agent stylesheet accessibility styling, 
+    // because we are manually setting borders for interactivity states (:hover, :focus, :active)
+    outline: none;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+        border-color: $base-black-lighter;
+    }
+
+    &:active {
+        border-color: $action-yellow;
     }
 }
