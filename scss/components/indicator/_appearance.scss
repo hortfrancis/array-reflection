@@ -1,0 +1,24 @@
+.indicator {
+
+    // Default visual styling
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(180deg, $base-grey-darker, darken($base-grey-darker, $shade-modifier));
+    color: $base-white;
+    box-shadow: $indicator-shadow;
+    text-align: center;
+
+    // Start invisible when added to the DOM
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out; 
+}
+
+// Custom colours based on indicator type
+
+.indicator--success {
+    background: linear-gradient(180deg, $success-green, darken($success-green, $shade-modifier));
+}
+
+.indicator--error {
+    background: linear-gradient(180deg, $error-red, darken($error-red, $shade-modifier));
+}

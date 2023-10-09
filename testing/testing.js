@@ -26,3 +26,30 @@ function checkTestingMode() {
         console.log('Testing mode is disabled.');
     }
 }
+
+/*
+    Test cases for the indicator message function
+*/ 
+
+if (localStorage.getItem('testing') === 'true') {
+
+    setTimeout(() => {
+        showIndicator('Testing a SUCCESS message.', 'success');
+    }
+    , 1);
+    
+    setTimeout(() => {
+        showIndicator('Testing an ERROR message.', 'error');
+    }
+    , 6000);
+    
+    setTimeout(() => {
+        showIndicator('Testing a DEFAULT message.');
+    }
+    , 12000);
+
+    setTimeout(() => {
+        showIndicator('Testing a very long UNKNOWN message. The rain in Spain falls mainly on the plain. The frame in Maine is probably out of blame.', 'unknown');
+    }
+    , 18000);
+}

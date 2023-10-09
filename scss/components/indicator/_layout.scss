@@ -1,0 +1,16 @@
+.indicator {
+
+    // Positioned centred at the bottom third of the viwport.
+    position: fixed;
+    bottom: 33.3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: 15rem;
+
+    @include at-breakpoint(narrow-to-medium) {
+
+        width: 20rem;
+    }
+}
+

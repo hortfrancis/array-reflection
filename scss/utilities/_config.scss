@@ -5,6 +5,8 @@ $base-grey: #dfe4e6;
 
 $inactive-grey: $base-grey;
 $action-yellow: #ffb600;
+$success-green: #4caf50;
+$error-red: #f44336;
 
 // For consistency when using `darken()` and `lighten()` functions
 $shade-modifier: 20%;
@@ -17,6 +19,8 @@ $base-black-lighter: lighten($base-black, $shade-modifier);
 
 $action-yellow-translucent: rgba($action-yellow, $translucent-modifier);
 
+// For the 'indicator' component, as a pop-up message
+$indicator-shadow: 0 0 0.5rem rgba($base-black, 0.25);
 
 // Viewport width breakpoints
 $breakpoints: (

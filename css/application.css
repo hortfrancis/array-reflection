@@ -327,4 +327,37 @@ button:disabled:hover {
   font-weight: 600;
 }
 
+.indicator {
+  position: fixed;
+  bottom: 33.3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 15rem;
+}
+@media (min-width: 400px) {
+  .indicator {
+    width: 20rem;
+  }
+}
+
+.indicator {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(180deg, #a6b4b9, #6d838c);
+  color: #ffffff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.indicator--success {
+  background: linear-gradient(180deg, #4caf50, #2d682f);
+}
+
+.indicator--error {
+  background: linear-gradient(180deg, #f44336, #ba160a);
+}
+
 /*# sourceMappingURL=application.css.map */
