@@ -17,6 +17,7 @@ $base-grey-darker: darken($base-grey, $shade-modifier);
 $base-grey-lighter: lighten($base-grey, $shade-modifier);
 $base-black-lighter: lighten($base-black, $shade-modifier);
 
+$success-green-lighter: lighten($success-green, $shade-modifier);
 $action-yellow-translucent: rgba($action-yellow, $translucent-modifier);
 
 // For the 'indicator' component, as a pop-up message

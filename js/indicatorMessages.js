@@ -3,8 +3,8 @@
     Can be used for success, error, or other messages.
 */
 
-// Default duration = 5 seconds
-function makeIndicator(message, type = 'default' , duration = 5000) {
+// Default duration = 3 seconds
+function makeIndicator(message, type = 'default' , duration = 3000) {
 
     // Create a new DOM element
     const indicator = document.createElement('span');
@@ -39,7 +39,7 @@ function makeIndicator(message, type = 'default' , duration = 5000) {
     // CSS transition on `.indicator` will cause a fade-in effect 
     indicator.style.opacity = '1';
 
-    // Indicator will disappear after a default duration of 5 seconds, or a custom duration provided 
+    // Indicator will disappear after a default duration of 3 seconds, or the custom duration provided as an argument 
     setTimeout(() => {
 
         // Trigger fade out as a transition

@@ -54,17 +54,35 @@ addEmailForm.addEventListener('submit', (event) => {
 
     makeIndicator('Email address added!', 'success');
 
+    // Make the input element 'flash' green to indicate success
+    addEmailInput.classList.add('email-address-adder__email-input--success');
+    setTimeout(() => {
+        addEmailInput.classList.remove('email-address-adder__email-input--success');
+    }, 300);  // Flash for 0.3 seconds
+
     // Clear the input field
     addEmailForm.reset();
 });
 
 // When the form attempts to submit, it will check the validity of the input field; 
 // if the value is not a valid email address, this event listener will fire
-addEmailInput.addEventListener('invalid', (event) => {
-    
+addEmailInput.addEventListener('invalid', () => {
+
     makeIndicator("Please enter a valid email address.", 'error');
+
+    // Make the border of the input element red
+    addEmailInput.classList.add('email-address-adder__email-input--invalid');
+
+    // Wait until the user interacts with the input field again, and then remove the red border
+    addEmailInput.addEventListener('input', () => {
+        addEmailInput.classList.remove('email-address-adder__email-input--invalid');
+    }, {
+        // Event will remove itself automatically after firing once
+        once: true
+    }
+    );
 }, {
     // 'invalid' event do not bubble; must be captured instead.
     capture: true
 }
- );
+);

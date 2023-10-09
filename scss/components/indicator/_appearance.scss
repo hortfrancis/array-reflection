@@ -11,6 +11,9 @@
     // Start invisible when added to the DOM
     opacity: 0; 
     transition: opacity 0.3s ease-in-out; 
+
+    // No need for the user to select the text in the indicator
+    user-select: none;
 }
 
 // Custom colours based on indicator type

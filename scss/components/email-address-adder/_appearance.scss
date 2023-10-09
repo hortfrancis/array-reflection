@@ -8,3 +8,36 @@
     }
 }
 
+.email-address-adder__email-input {
+
+    // Smooth the green 'flash' on successful email address input
+    transition: background-color 0.1s ease-in-out;
+}
+
+// Pseudo-class associated with browser-native validation
+.email-address-adder__email-input:valid {
+
+    // Change the border to green as soon as the value entered is a valid email address
+    border-color: $success-green;
+}
+
+// This class is added by `emailAddressAdder.js`, (not by the browser-native validation).
+.email-address-adder__email-input--success {
+
+    // Make the input field 'flash' green upon successful email address input
+    background-color: $success-green;
+    // `!important` to override `:focus` pseudo-class
+    border-color: $success-green !important;
+}
+
+.email-address-adder__email-input--success::placeholder {
+    color: $success-green-lighter;
+}
+
+// This class is added by `emailAddressAdder.js` (not by the browser-native validation). 
+// The style is applied by the 'invalid' event handler attached to `input#input-add-email`, 
+// and is removed when the user next interacts with the input field. 
+.email-address-adder__email-input--invalid {
+    // `!important` to override `:focus` pseudo-class
+    border-color: $error-red !important;
+}
