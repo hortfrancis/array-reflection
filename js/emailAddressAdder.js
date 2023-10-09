@@ -39,13 +39,49 @@ emailAddresses.push(new EmailAddress('test2@test.test'));
 emailAddresses.push(new EmailAddress('test3@test.test'));
 
 
+// Checks if a given email address already exists in the array of stored email addresses
+function alreadyAdded(emailAddress) {
+
+    let alreadyAdded = false;
+
+    emailAddresses.forEach((emailAddressInTheArray) => {
+        if (emailAddressInTheArray.emailAddress === emailAddress) {
+            alreadyAdded = true;
+        }
+    });
+    return alreadyAdded;
+}
+
+// Add temporary styling to 'Add an Email Address' field to indicate invalid input that should be changed
+function makeEmailInputBorderRed() {
+
+    // Make the border of the input element red
+    addEmailInput.classList.add('email-address-adder__email-input--invalid');
+
+    // Wait until the user interacts with the input field again, and then remove the red border
+    addEmailInput.addEventListener('input', () => {
+        addEmailInput.classList.remove('email-address-adder__email-input--invalid');
+    }, {
+        // Event will remove itself automatically after firing once
+        once: true
+    });
+}
+
 addEmailForm.addEventListener('submit', (event) => {
 
     // Stop the page from being reloaded
     event.preventDefault();
 
-    // Get the email input field
-    const emailAddress = document.querySelector('#input-add-email').value;
+    const emailAddress = addEmailInput.value;
+
+    // Check the email address input by the user hasn't already been added
+    if (alreadyAdded(emailAddress)) {
+
+        makeIndicator('Email address has already been added!', 'error');
+        makeEmailInputBorderRed();
+        // Stop the function from executing any further
+        return;
+    }
 
     // Add the input email address to the array of stored email addresses
     emailAddresses.push(new EmailAddress(emailAddress));
@@ -69,20 +105,9 @@ addEmailForm.addEventListener('submit', (event) => {
 addEmailInput.addEventListener('invalid', () => {
 
     makeIndicator("Please enter a valid email address.", 'error');
-
-    // Make the border of the input element red
-    addEmailInput.classList.add('email-address-adder__email-input--invalid');
-
-    // Wait until the user interacts with the input field again, and then remove the red border
-    addEmailInput.addEventListener('input', () => {
-        addEmailInput.classList.remove('email-address-adder__email-input--invalid');
-    }, {
-        // Event will remove itself automatically after firing once
-        once: true
-    }
-    );
+    makeEmailInputBorderRed();
 }, {
-    // 'invalid' event do not bubble; must be captured instead.
+    // 'invalid' events do not bubble; event must be 'captured' instead.
     capture: true
 }
 );
