@@ -1,1 +1,2 @@
-# .gitignore is blank for now
+# MacOS directory cache
+.DS_Store
