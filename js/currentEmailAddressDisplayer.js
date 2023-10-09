@@ -96,7 +96,8 @@ emailAddressPicker.addEventListener('change', () => {
 addCurrentImageButton.addEventListener('click', () => {
 
     currentlySelectedEmailAddress.addImage(currentImageURL);
-    updateAssignedImagesDisplayer();
+    updateAssignedImagesDisplayer( );
+    makeIndicator('Image assigned to email address!', 'success');
 });
 
 // On page load, populate the email address picker with any stored email addresses 

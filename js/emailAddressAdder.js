@@ -28,6 +28,7 @@ class EmailAddress {
 }
 
 const addEmailForm = document.querySelector('#form-add-email');
+const addEmailInput = addEmailForm.querySelector('#input-add-email');
 
 // Initialise an empty array to store email addresses
 const emailAddresses = [];
@@ -43,8 +44,6 @@ addEmailForm.addEventListener('submit', (event) => {
     // Stop the page from being reloaded
     event.preventDefault();
 
-    console.log('form-add-email submitted');
-
     // Get the email input field
     const emailAddress = document.querySelector('#input-add-email').value;
 
@@ -53,10 +52,19 @@ addEmailForm.addEventListener('submit', (event) => {
 
     updateEmailAddressPicker();
 
-    console.log(emailAddresses);
+    makeIndicator('Email address added!', 'success');
 
     // Clear the input field
     addEmailForm.reset();
 });
 
-console.log(emailAddresses);
+// When the form attempts to submit, it will check the validity of the input field; 
+// if the value is not a valid email address, this event listener will fire
+addEmailInput.addEventListener('invalid', (event) => {
+    
+    makeIndicator("Please enter a valid email address.", 'error');
+}, {
+    // 'invalid' event do not bubble; must be captured instead.
+    capture: true
+}
+ );

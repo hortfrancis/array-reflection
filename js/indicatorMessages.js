@@ -4,7 +4,7 @@
 */
 
 // Default duration = 5 seconds
-function showIndicator(message, type = 'default' , duration = 5000) {
+function makeIndicator(message, type = 'default' , duration = 5000) {
 
     // Create a new DOM element
     const indicator = document.createElement('span');

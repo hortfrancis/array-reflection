@@ -7,7 +7,6 @@ const accessKey = 'zHaO4h1oOz3bR_zLHY2XX0TAKF7Jy4Ny0gimZmSPrx0';
 const randomImageEndpoint = 'https://api.unsplash.com/photos/random';
 
 
-
 function fetchImage() {
     // Using Unsplash API
     // https://unsplash.com/documentation#get-a-random-photo
@@ -25,7 +24,9 @@ function fetchImage() {
             fetchedImageContainer.innerHTML = `<img src="${data.urls.small}" alt="random image">`;
             currentImageURL = data.urls.small;
         })
-        .catch(error => console.error(error));
+        .catch(error => {
+            console.error(error)
+            makeIndicator('Unable to fetch an image from Unsplash.', 'error');});
 }
 
 // Fetch another image each time the button is pressed
