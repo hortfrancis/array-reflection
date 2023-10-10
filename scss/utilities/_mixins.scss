@@ -77,14 +77,4 @@
     // Removing user-agent stylesheet accessibility styling, 
     // because we are manually setting borders for interactivity states (:hover, :focus, :active)
     outline: none;
-
-    &:hover,
-    &:focus,
-    &:focus-visible {
-        border-color: $base-black-lighter;
-    }
-
-    &:active {
-        border-color: $action-yellow;
-    }
 }

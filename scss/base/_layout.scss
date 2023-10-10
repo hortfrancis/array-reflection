@@ -48,6 +48,11 @@ button {
     }
 }
 
+label {
+    // Keep :hover continuous between label and input/select
+    padding-bottom: 1.5rem;
+}
+
 // Breakpoint: 900px and above 
 @include at-breakpoint('medium-to-wide') {
 
