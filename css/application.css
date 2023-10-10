@@ -165,6 +165,9 @@ button:disabled {
   color: #a6b4b9;
   cursor: not-allowed;
 }
+button:disabled:active {
+  border-color: #a6b4b9;
+}
 button:disabled:hover {
   border-color: #a6b4b9;
 }

@@ -42,6 +42,12 @@ button {
         color: $base-grey-darker;
         cursor: not-allowed;
 
+        &:active {
+            // Need to set this explicitly, 
+            // to prevent a slight bug in browser rendering of disabled buttons
+            border-color: $base-grey-darker;
+        }
+
         &:hover {
             border-color: $base-grey-darker;
         }
