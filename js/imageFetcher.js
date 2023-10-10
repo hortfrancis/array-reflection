@@ -19,7 +19,6 @@ function fetchImage() {
             return response.json(); // (Returns a promise)
         })
         .then(data => {
-            console.log(data);
             // Saving the URL of the 'small' version of the image
             fetchedImageContainer.innerHTML = `<img src="${data.urls.small}" alt="random image">`;
             currentImageURL = data.urls.small;

@@ -95,6 +95,12 @@ emailAddressPicker.addEventListener('change', () => {
 
 addCurrentImageButton.addEventListener('click', () => {
 
+    if (currentlySelectedEmailAddress.images.includes(currentImageURL)) {
+        // Images is already assigned to this email address
+        makeIndicator('This image already been assigned to that email address.', 'error');
+        return; // Exit the function early
+    }
+
     currentlySelectedEmailAddress.addImage(currentImageURL);
     updateAssignedImagesDisplayer();
     saveToLocalStorage(emailAddresses);
