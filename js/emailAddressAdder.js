@@ -30,13 +30,10 @@ class EmailAddress {
 const addEmailForm = document.querySelector('#form-add-email');
 const addEmailInput = addEmailForm.querySelector('#input-add-email');
 
-// Initialise an empty array to store email addresses
-const emailAddresses = [];
 
-// Populate the array with some generic test data
-emailAddresses.push(new EmailAddress('test1@test.test'));
-emailAddresses.push(new EmailAddress('test2@test.test'));
-emailAddresses.push(new EmailAddress('test3@test.test'));
+// Initialise an empty array to store email addresses, 
+// or load from localStorage if previous application data exists
+const emailAddresses = loadFromLocalStorage() || [];
 
 
 // Checks if a given email address already exists in the array of stored email addresses
@@ -87,6 +84,7 @@ addEmailForm.addEventListener('submit', (event) => {
     emailAddresses.push(new EmailAddress(emailAddress));
 
     updateEmailAddressPicker();
+    saveToLocalStorage(emailAddresses);
 
     makeIndicator('Email address added!', 'success');
 
