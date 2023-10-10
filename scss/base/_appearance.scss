@@ -2,6 +2,35 @@ body {
     background-color: $base-grey;
 }
 
+.instructions ol {
+    // Add custom-styled numbering to the list
+    counter-set: item;
+
+    li:before {
+        // Center the custom number marker
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+
+        content: counter(item); 
+        counter-increment: item; // Increment the number displayed
+
+        width: 1.75em;
+        height: 1.75em;
+        position: absolute;
+        padding-top: 0.2em;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%); // Vertically center the marker
+        
+        background-color: $base-black-lighter;
+        color: $base-white;
+        border-radius: 50%; // Make it rounded
+        text-align: center;
+        line-height: 1.5em; // Vertically center the text within the circle
+    }
+}
+
 input {
     @include neomorphic-shadow-inwards;
     @include interactable-border; // Includes border colour darken on :hover

@@ -9,6 +9,7 @@ html {
   box-sizing: inherit;
 }
 
+ol,
 ul {
   list-style: none;
   padding: 0;
@@ -28,6 +29,11 @@ button {
   font-size: 1rem;
   line-height: 1.2;
   color: #333333;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
 }
 
 label {
@@ -54,9 +60,7 @@ body {
 }
 
 h1 {
-  margin: 2rem 0;
-  text-align: center;
-  font-size: 2rem;
+  margin: 2rem 1.5rem;
 }
 
 input,
@@ -69,6 +73,28 @@ button {
   display: block;
   padding: 0.75rem 1rem;
   margin: 1rem 0;
+}
+
+.instructions {
+  max-width: 13rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+@media (min-width: 500px) {
+  .instructions {
+    max-width: 20rem;
+  }
+}
+.instructions ol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.instructions li {
+  position: relative;
+  padding-left: 2.25em;
 }
 
 @media (min-width: 900px) {
@@ -106,6 +132,29 @@ button {
 }
 body {
   background-color: #dfe4e6;
+}
+
+.instructions ol {
+  counter-set: item;
+}
+.instructions ol li:before {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  content: counter(item);
+  counter-increment: item;
+  width: 1.75em;
+  height: 1.75em;
+  position: absolute;
+  padding-top: 0.2em;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333333;
+  color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.5em;
 }
 
 input {

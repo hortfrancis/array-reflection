@@ -7,9 +7,7 @@ body {
 }
 
 h1 {
-    margin: 2rem 0;
-    text-align: center;
-    font-size: 2rem;
+    margin: 2rem 1.5rem;
 }
 
 input,
@@ -22,6 +20,32 @@ button {
     display: block;
     padding: 0.75rem 1rem;
     margin: 1rem 0;
+}
+
+.instructions {
+
+    max-width: 13rem;
+
+    // Viewport width: 500px and above
+    @include at-breakpoint('narrow-to-medium', 100px) {
+        max-width: 20rem;
+    }
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+
+    ol {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    li {
+        position: relative;
+        padding-left: 2.25em; // Provide space for the custom marker
+    }
 }
 
 // Breakpoint: 900px and above 
